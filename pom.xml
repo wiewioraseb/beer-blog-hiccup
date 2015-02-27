@@ -5,6 +5,11 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
   
+  <!-- Testing -->
+  <properties>
+  <org.springframework.version>4.1.5.RELEASE</org.springframework.version>
+  </properties>
+  
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
@@ -26,7 +31,11 @@
       </plugin>
     </plugins>
   </build>
+
+	
   
+  
+  <!-- OLD DEPENDENCIES -->
   <dependencies>
   	<dependency>
   		<groupId>org.springframework</groupId>
@@ -59,5 +68,6 @@
   		<version>1.2</version>
   	</dependency>
   </dependencies>
-  
+      <!--   OLD DEPENDENCIES -->
+        
 </project>

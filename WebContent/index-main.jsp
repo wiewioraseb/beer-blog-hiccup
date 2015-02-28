@@ -6,7 +6,7 @@ body {
 	background-image: url('http://crunchify.com/bg.png');
 }
 </style>
-</head>
+</head> 
 <body>
 	<br>
 	<div align='center'>

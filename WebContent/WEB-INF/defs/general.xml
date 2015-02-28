@@ -13,4 +13,15 @@
     <put-attribute name="title" value="TITLE in index which extends common lol" />
     <put-attribute name="body" value="/WEB-INF/jsp/index.jsp" />
   </definition>
+
+    <definition name="indeksownia" extends="common"> <!-- indeksownia.jsp -->
+    <put-attribute name="title" value="indeksownia TITLE" />
+    <put-attribute name="body" value="/WEB-INF/jsp/indeksownia.jsp" />
+  </definition>  
+  
+      <definition name="welcome" extends="common"> <!-- welcome.jsp -->
+    <put-attribute name="title" value="welcome TITLE" />
+    <put-attribute name="body" value="/WEB-INF/jsp/welcome.jsp" />
+  </definition>  
+  
 </tiles-definitions>

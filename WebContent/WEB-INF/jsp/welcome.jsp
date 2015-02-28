@@ -1,11 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <html>
 <head>
-<title>Spring MVC Tutorial BEER BLOG</title>
-<style type="text/css">
-body {
-	background-image: url('http://crunchify.com/bg.png');
-}
-</style>
+<title>Spring MVC Tutorial BEER BLOG</title> <%-- Title is changed to what is written in general.xml --%>
+
 </head>
 <body>${message}
 

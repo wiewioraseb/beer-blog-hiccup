@@ -21,13 +21,16 @@ public class BeerBlogHello {
 	}
 	
 	
+
+	
+	
 	// This shows indeksownia.html in web browser (from indeksownia.jsp)
-	@RequestMapping("/indeksownia")
+	@RequestMapping("/indeksownia.html")
 	public String indeksownia(){
 		return "indeksownia"; // /WEB-INF/jsp/indeksownia
 	}
 	
-	@RequestMapping("/index")
+	@RequestMapping("/index.html")
 	public String index(){
 		return "index"; // W pliku xml general jest tag
 	}
@@ -38,6 +41,7 @@ public class BeerBlogHello {
 // source
 // http://crunchify.com/simplest-spring-mvc-hello-world-example-tutorial-spring-model-view-controller-tips/
 // http://localhost:8080/CrunchifySpringMVCTutorial/
+// http://localhost:8080/beer-blog-hiccup/
 
 
 // Tutorial na zrobienie Bloga z logowaniem, dodawaniem wpisów, dupsy w Javie, Spring Jquery i inne
@@ -52,3 +56,9 @@ public class BeerBlogHello {
 // B³¹d gdy klikam na odnoœnik na stronce. Pobaiwiæ siê przy tym. 
 // Jak co to mo¿esz usun¹æ <plugin> z Tomcatem, bo on mo¿e nic nie robiæ na razie
 // moze jest potrzebny moze nie, moze glupie moze madre
+
+
+// http://stackoverflow.com/questions/28783419/adding-resources-to-tomcat-server-makes-this-resource-posses-tag-in-parenthesis
+
+// Podstawy Spring MVC
+// http://www.deepakgaikwad.net/index.php/2009/03/31/spring-mvc-tutorial-concepts-and-code-examples.html

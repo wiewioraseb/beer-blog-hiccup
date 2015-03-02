@@ -3,25 +3,31 @@
        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
-	<!-- Comes from http://tiles.apache.org/framework/tutorial/basic/pages.html -->
+<!-- Comes from http://tiles.apache.org/framework/tutorial/basic/pages.html -->
 <tiles-definitions>
-  <definition name="common" template="WEB-INF/layout/classic.jsp">
-    <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
-  </definition>
-  
-    <definition name="index" extends="common"> <!-- index odpowiada index.jsp -->
-    <put-attribute name="title" value="TITLE in index which extends common lol" />
-    <put-attribute name="body" value="/WEB-INF/jsp/index.jsp" />
-  </definition>
+	<definition name="common" template="WEB-INF/layout/classic.jsp">
+		<put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
+	</definition>
 
-    <definition name="indeksownia" extends="common"> <!-- indeksownia.jsp -->
-    <put-attribute name="title" value="indeksownia TITLE" />
-    <put-attribute name="body" value="/WEB-INF/jsp/indeksownia.jsp" />
-  </definition>  
-  
-      <definition name="welcome" extends="common"> <!-- welcome.jsp -->
-    <put-attribute name="title" value="welcome TITLE" />
-    <put-attribute name="body" value="/WEB-INF/jsp/welcome.jsp" />
-  </definition>  
-  
+	<definition name="index" extends="common"> <!-- index odpowiada index.jsp -->
+		<put-attribute name="title"
+			value="TITLE in index which extends common lol" />
+		<put-attribute name="body" value="/WEB-INF/jsp/index.jsp" />
+	</definition>
+
+	<definition name="indeksownia" extends="common"> <!-- indeksownia.jsp -->
+		<put-attribute name="title" value="indeksownia TITLE" />
+		<put-attribute name="body" value="/WEB-INF/jsp/indeksownia.jsp" />
+	</definition>
+
+	<definition name="welcome" extends="common"> <!-- welcome.jsp -->
+		<put-attribute name="title" value="welcome TITLE" />
+		<put-attribute name="body" value="/WEB-INF/jsp/welcome.jsp" />
+	</definition>
+	
+	<definition name="bonus" extends="common"> <!-- bonus.jsp -->
+		<put-attribute name="title" value="bonus TITLE" />
+		<put-attribute name="body" value="/WEB-INF/jsp/bonus.jsp" />
+	</definition>
+
 </tiles-definitions>

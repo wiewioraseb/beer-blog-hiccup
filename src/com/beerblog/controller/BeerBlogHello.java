@@ -35,8 +35,17 @@ public class BeerBlogHello {
 		return "index"; // W pliku xml general jest tag
 	}
 	
+	@RequestMapping("/bonus.html")
+	public String bonus(){
+		return "bonus"; 
+	}
+	
 	
 } // END OF CLASS
+
+// !!!!
+// HERE: http://www.mkyong.com/spring/spring-error-classnotfoundexception-org-springframework-web-context-contextloaderlistener/
+// http://stackoverflow.com/questions/15989325/severe-error-configuring-application-listener-of-class-org-springframework-web
 
 // source
 // http://crunchify.com/simplest-spring-mvc-hello-world-example-tutorial-spring-model-view-controller-tips/
@@ -52,10 +61,6 @@ public class BeerBlogHello {
 // changing the root for localhost/beer-blog-hiccup
 // http://stackoverflow.com/questions/2437465/java-how-to-change-context-root-of-a-dynamic-web-project-in-eclipse
 
-
-// B³¹d gdy klikam na odnoœnik na stronce. Pobaiwiæ siê przy tym. 
-// Jak co to mo¿esz usun¹æ <plugin> z Tomcatem, bo on mo¿e nic nie robiæ na razie
-// moze jest potrzebny moze nie, moze glupie moze madre
 
 
 // http://stackoverflow.com/questions/28783419/adding-resources-to-tomcat-server-makes-this-resource-posses-tag-in-parenthesis

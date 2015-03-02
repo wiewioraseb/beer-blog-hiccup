@@ -222,26 +222,10 @@
       <!--   OLD DEPENDENCIES -->
       
   
-  	<dependency>
-  		<groupId>org.springframework</groupId>
-  		<artifactId>spring-web</artifactId>
-  		<version>4.1.5.RELEASE</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>org.springframework</groupId>
-  		<artifactId>spring-context</artifactId>
-  		<version>4.1.5.RELEASE</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>org.springframework</groupId>
-  		<artifactId>spring-webmvc</artifactId>
-  		<version>4.1.5.RELEASE</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>org.springframework</groupId>
-  		<artifactId>spring-aop</artifactId>
-  		<version>4.1.5.RELEASE</version>
-  	</dependency>
+
+
+
+
   	<dependency>
   		<groupId>commons-logging</groupId>
   		<artifactId>commons-logging</artifactId>
@@ -254,8 +238,57 @@
   	</dependency>
       
      <!-- OLD -->
+     
+     
+     <!-- Hibernate JPA -->
+     
+     <dependency>
+     	<groupId>org.hibernate</groupId>
+     	<artifactId>hibernate-entitymanager</artifactId>
+     	<version>4.3.8.Final</version>
+     </dependency>
+     
+     <dependency>
+     	<groupId>org.springframework.data</groupId>
+     	<artifactId>spring-data-jpa</artifactId>
+     	<version>1.7.2.RELEASE</version>
+     </dependency>
+
+     <dependency>
+     	<groupId>org.hsqldb</groupId>
+     	<artifactId>hsqldb</artifactId>
+     	<version>2.3.2</version>
+     </dependency>
+
+  </dependencies>
       
- </dependencies>
+      <!-- Duplicates? 
       
+     <dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-context</artifactId>
+  		<version>4.1.5.RELEASE</version>
+  	</dependency>
+      
+       	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-web</artifactId>
+  		<version>4.1.5.RELEASE</version>
+  	</dependency>
+  	
+  	  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-webmvc</artifactId>
+  		<version>4.1.5.RELEASE</version>
+  	</dependency>
+  	
+  	   	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-aop</artifactId>
+  		<version>4.1.5.RELEASE</version>
+  	</dependency>
+      
+        -->
+        
         
 </project>

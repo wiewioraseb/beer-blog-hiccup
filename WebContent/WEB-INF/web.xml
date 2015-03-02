@@ -18,4 +18,16 @@
     <url-pattern>*.html</url-pattern>
     
   </servlet-mapping>
+
+ <!-- Caused some problems:
+ ClassNotFoundException : org.springframework.web.context.ContextLoaderListener
+  -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/applicationContext.xml</param-value>
+	</context-param>  
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoadListener</listener-class>
+	</listener>
+  
 </web-app>

@@ -93,7 +93,6 @@ background-color: #191919;
 		<tiles:insertAttribute name="footer" />
 	</center>
 
-	</div>
 
 </body>
 </html>

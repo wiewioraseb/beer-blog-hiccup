@@ -51,7 +51,6 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
-			<version>${org.springframework.version}</version>
 		</dependency>
 
 		<!-- Expression Language (depends on spring-core) Define this if you use 
@@ -59,7 +58,6 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-expression</artifactId>
-			<version>${org.springframework.version}</version>
 		</dependency>
 
 		<!-- Bean Factory and JavaBeans utilities (depends on spring-core) Define 
@@ -67,7 +65,6 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-beans</artifactId>
-			<version>${org.springframework.version}</version>
 		</dependency>
 
 		<!-- Aspect Oriented Programming (AOP) Framework (depends on spring-core, 
@@ -75,7 +72,6 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-aop</artifactId>
-			<version>${org.springframework.version}</version>
 		</dependency>
 
 		<!-- Application Context (depends on spring-core, spring-expression, spring-aop, 
@@ -84,7 +80,6 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
-			<version>${org.springframework.version}</version>
 		</dependency>
 
 		<!-- Various Application Context utilities, including EhCache, JavaMail, 
@@ -92,7 +87,6 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context-support</artifactId>
-			<version>${org.springframework.version}</version>
 		</dependency>
 
 		<!-- Transaction Management Abstraction (depends on spring-core, spring-beans, 
@@ -101,7 +95,6 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-tx</artifactId>
-			<version>${org.springframework.version}</version>
 		</dependency>
 
 		<!-- JDBC Data Access Library (depends on spring-core, spring-beans, spring-context, 
@@ -109,7 +102,6 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
-			<version>${org.springframework.version}</version>
 		</dependency>
 
 		<!-- Object-to-Relation-Mapping (ORM) integration with Hibernate, JPA, 
@@ -118,7 +110,6 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-orm</artifactId>
-			<version>${org.springframework.version}</version>
 		</dependency>
 
 		<!-- Object-to-XML Mapping (OXM) abstraction and integration with JAXB, 
@@ -127,7 +118,6 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-oxm</artifactId>
-			<version>${org.springframework.version}</version>
 		</dependency>
 
 		<!-- Web application development utilities applicable to both Servlet and 
@@ -137,7 +127,6 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
-			<version>${org.springframework.version}</version>
 		</dependency>
 
 		<!-- Spring MVC for Servlet Environments (depends on spring-core, spring-beans, 
@@ -146,7 +135,6 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
-			<version>${org.springframework.version}</version>
 		</dependency>
 
 		<!-- Spring MVC for Portlet Environments (depends on spring-core, spring-beans, 
@@ -155,7 +143,6 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc-portlet</artifactId>
-			<version>${org.springframework.version}</version>
 		</dependency>
 
 		<!-- Support for testing Spring applications with tools such as JUnit and 
@@ -164,7 +151,6 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
-			<version>${org.springframework.version}</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -289,6 +275,19 @@
   	</dependency>
       
         -->
-        
+
+	
+	<!-- Might help  http://www.javavids.com/video/spring-web-app-tutorial-extras-bom-dependency.html -->
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-framework-bom</artifactId>
+				<version>${org.springframework.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
         
 </project>

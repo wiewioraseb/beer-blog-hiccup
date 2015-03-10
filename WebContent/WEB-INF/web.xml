@@ -6,6 +6,17 @@
     <welcome-file>index-main.jsp</welcome-file>
   </welcome-file-list>
   
+   <!-- Caused some problems:
+ ClassNotFoundException : org.springframework.web.context.ContextLoaderListener
+  -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/applicationContext.xml</param-value>
+	</context-param>  
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+  
   <servlet>
     <servlet-name>beer-blog-hiccup</servlet-name>
     <servlet-class>
@@ -19,15 +30,6 @@
     
   </servlet-mapping>
 
- <!-- Caused some problems:
- ClassNotFoundException : org.springframework.web.context.ContextLoaderListener
-  -->
-	<context-param>
-		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/applicationContext.xml</param-value>
-	</context-param>  
-	<listener>
-		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-	</listener>
+
   
 </web-app>

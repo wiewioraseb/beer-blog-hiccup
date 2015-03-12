@@ -16,7 +16,7 @@ public class Role {
 
 	private String name;
 	
-	@ManyToMany(mappedBy="roles") // many users can have the many roles
+	@ManyToMany(mappedBy="roles") // many users can have many roles
 	private List<User> users;
 
 	public Integer getId() {

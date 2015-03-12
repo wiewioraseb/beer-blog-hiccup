@@ -5,6 +5,10 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
   
+  
+
+  
+  
   <!-- Testing -->
   <properties>
   <org.springframework.version>4.1.5.RELEASE</org.springframework.version>
@@ -40,6 +44,8 @@
           <failOnMissingWebXml>false</failOnMissingWebXml>
         </configuration>
       </plugin>
+
+      
     </plugins>
   </build>
 
@@ -246,6 +252,9 @@
      	<version>2.3.2</version>
      </dependency>
 
+
+
+
   </dependencies>
       
       <!-- Duplicates? 
@@ -275,6 +284,11 @@
   	</dependency>
       
         -->
+        
+        
+
+        
+        
 
 	
 	<!-- Might help  http://www.javavids.com/video/spring-web-app-tutorial-extras-bom-dependency.html -->
@@ -289,5 +303,8 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+        
+        
+
         
 </project>

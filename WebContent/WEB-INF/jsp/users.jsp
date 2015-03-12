@@ -20,22 +20,47 @@
 				<td>${user.name}</td>
 			</tr>
 
+		<tr>
+			<td>
+			<spring:url value="/users/${user.id}.html" var="url"/>
+			<a href="${url}">February: ${user.name}</a>
+			<%-- <a href="<spring:url value:"/users/${user.id}.html" />">February: ${user.name} </a></td>--%>
+			</td>
+		</tr>
+		
 		</c:forEach>
 		
 		
  https://www.youtube.com/watch?v=6LewRDc6DPc&index=14&list=PLmcxdcWPhFqMq2BctGktOcIJKUw23wJeh
 		
-		<tr>
-			<td>
-			<spring:url value="/users/${user.id}.html" />
-			<a href="${url}">February: ${user.name}</a>
-			<%-- <a href="<spring:url value:"/users/${user.id}.html" />">February: ${user.name} </a></td>--%>
-			</td>
-		</tr>
+
 	</tbody>
 
 </table><%-- ${user.name} From User.java entity package --%>
 
-<a href="${url}">...</a>
+${url} <br>
+egeszhege
 
+<br><br><br>
 
+<c:forEach items="${bambucha}" var="itemki">
+		${itemki.title} <br>
+</c:forEach>
+
+<br>
+
+<%--
+bambucha
+<table>
+	<tbody>
+		<c:forEach items="${bambucha}" var=itemki>
+		
+		<tr>
+			<td>${itemki.title }</td>
+		</tr>
+		
+		</c:forEach>
+	</tbody>
+</table>
+--%>
+lulz

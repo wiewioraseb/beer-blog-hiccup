@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.beerblog.entity.User;
 import com.beerblog.service.UserService;
+import com.beerblog.service.ItemService;
 
 
 
@@ -19,9 +20,15 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
+	@Autowired
+	private ItemService itemService;
+	
 	@RequestMapping("/users.html")
 	public String users(Model model){
 		// loading date from date base
+	
+		// testing this
+		model.addAttribute("bambucha", itemService.findAll());
 		
 		model.addAttribute("users", userService.findAll());
 		return "users";

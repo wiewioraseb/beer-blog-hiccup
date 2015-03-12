@@ -40,27 +40,27 @@ public class BeerBlogHello {
 	
 } // END OF CLASS
 
-// !!!!
-// HERE: http://www.mkyong.com/spring/spring-error-classnotfoundexception-org-springframework-web-context-contextloaderlistener/
-// http://stackoverflow.com/questions/15989325/severe-error-configuring-application-listener-of-class-org-springframework-web
 
-// source
-// http://crunchify.com/simplest-spring-mvc-hello-world-example-tutorial-spring-model-view-controller-tips/
-// http://localhost:8080/CrunchifySpringMVCTutorial/
 // http://localhost:8080/beer-blog-hiccup/
 
 
-// Tutorial na zrobienie Bloga z logowaniem, dodawaniem wpisów, dupsy w Javie, Spring Jquery i inne
+// Tutorial na zrobienie Bloga z logowaniem, dodawaniem wpisï¿½w, dupsy w Javie, Spring Jquery i inne
 // Koles z Czech
 // https://www.youtube.com/watch?v=mH2jx2RCu7o
 // !!
 
-// changing the root for localhost/beer-blog-hiccup
-// http://stackoverflow.com/questions/2437465/java-how-to-change-context-root-of-a-dynamic-web-project-in-eclipse
+// save something to data base - czech
+// https://www.youtube.com/watch?v=zRJSoPyKE48&list=PLmcxdcWPhFqMq2BctGktOcIJKUw23wJeh&index=46
 
+// >>>>>>>>>>> <<<<<<<<<<<<<<<<<<
+ /// >>>>> http://www.journaldev.com/2433/spring-mvc-tutorial-for-beginners-with-spring-tool-suite <<<<<<<<<<<<
 
+// handling form
+// http://www.mkyong.com/spring-mvc/spring-mvc-form-handling-example/ 
+// http://www.tutorialspoint.com/spring/spring_mvc_form_handling_example.htm  <--- ?
 
-// http://stackoverflow.com/questions/28783419/adding-resources-to-tomcat-server-makes-this-resource-posses-tag-in-parenthesis
+// saving information to hibernate after pressing submit
+// https://www.youtube.com/watch?v=f685FQv2PzA
 
 // Podstawy Spring MVC
 // http://www.deepakgaikwad.net/index.php/2009/03/31/spring-mvc-tutorial-concepts-and-code-examples.html

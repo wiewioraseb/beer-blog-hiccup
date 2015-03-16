@@ -1,12 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 
+<!--  path="name" corresponds to User.java in enitity -->
+<form:form commandName="user">
+	<label for="name">Name:	</label>
+	<form:input path="name" />
+		<label for="password">Password:	</label>
+	<form:password path="password" />
+	<input type="submit" value="Save" /> 
+</form:form>
 
+<br><br>
+<h1>ADDING SOMEHING HERE</h1>
+<br>
+
+<!-- Auto updates when form is sent -->
 <table class="table table-bordered table-hover table-condensed">
 	<thead>
 		<tr>
@@ -33,45 +46,13 @@
 		
 		</c:forEach>
 		
-		
- https://www.youtube.com/watch?v=6LewRDc6DPc&index=14&list=PLmcxdcWPhFqMq2BctGktOcIJKUw23wJeh
-		
 
 	</tbody>
-	
 	</c:if>
+</table>
+
 	
-
-
-</table><%-- ${user.name} From User.java entity package --%>
-
-<br>
-
-
-<br>
-${url} <br>
-egeszhege
-
-<br><br><br>
-
-<c:forEach items="${bambucha}" var="itemki">
+	<br>
+	<c:forEach items="${bambucha}" var="itemki">
 		${itemki.title} <br>
 </c:forEach>
-
-<br>
-
-<%--
-bambucha
-<table>
-	<tbody>
-		<c:forEach items="${bambucha}" var=itemki>
-		
-		<tr>
-			<td>${itemki.title }</td>
-		</tr>
-		
-		</c:forEach>
-	</tbody>
-</table>
---%>
-lulz

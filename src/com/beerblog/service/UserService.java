@@ -4,6 +4,8 @@ package com.beerblog.service;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +13,7 @@ import com.beerblog.entity.User;
 import com.beerblog.repository.UserRepository;
 
 @Service
+@Transactional
 public class UserService {
 
 	@Autowired
@@ -23,5 +26,9 @@ public class UserService {
 	public User findOne(int id) {
 		
 		return userRepository.findOne(id);
+	}
+
+	public void save(User user) {
+		userRepository.save(user);
 	}
 }

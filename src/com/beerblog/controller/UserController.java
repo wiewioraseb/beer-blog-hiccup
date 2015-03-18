@@ -32,7 +32,7 @@ public class UserController {
 	
 	@RequestMapping("/users.html")
 	public String users(Model model){
-		// loading date from date base
+		// loading data from database
 	
 		// testing this
 		model.addAttribute("bambucha", itemService.findAll());
@@ -68,7 +68,8 @@ public class UserController {
 	@RequestMapping(value="/register", method=RequestMethod.POST)
 	public String doRegister(@ModelAttribute("user") User user){
 		userService.save(user);
-		return "user-register";
+		return "redirect:/register.html"; 
+		//changed from 'user-register' to redirect:/register to achieve proper refreshing
 	}
 	
 }

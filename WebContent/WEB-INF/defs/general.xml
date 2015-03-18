@@ -9,32 +9,32 @@
 		<put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
 	</definition>
 
-	<definition name="index" extends="common"> <!-- index odpowiada index.jsp -->
+	<definition name="index" extends="common"> <!-- index - index.jsp -->
 		<put-attribute name="title"
 			value="TITLE in index which extends common lol" />
 		<put-attribute name="body" value="/WEB-INF/jsp/index.jsp" />
 		<put-attribute name="current_active" value="index" />
 	</definition>
 
-	<definition name="indeksownia" extends="common"> <!-- indeksownia.jsp -->
-		<put-attribute name="title" value="indeksownia TITLE" />
-		<put-attribute name="body" value="/WEB-INF/jsp/indeksownia.jsp" />
-		<put-attribute name="current_active" value="indeksownia" />
+	<definition name="about" extends="common"> 
+		<put-attribute name="title" value="about TITLE" />
+		<put-attribute name="body" value="/WEB-INF/jsp/about.jsp" />
+		<put-attribute name="current_active" value="about" />
 	</definition>
 
-	<definition name="welcome" extends="common"> <!-- welcome.jsp -->
+	<definition name="welcome" extends="common">
 		<put-attribute name="title" value="welcome TITLE" />
 		<put-attribute name="body" value="/WEB-INF/jsp/welcome.jsp" />
 		<put-attribute name="current_active" value="welcome" />
 	</definition>
 	
-	<definition name="bonus" extends="common"> <!-- bonus.jsp -->
-		<put-attribute name="title" value="bonus TITLE" />
-		<put-attribute name="body" value="/WEB-INF/jsp/bonus.jsp" />
-		<put-attribute name="current_active" value="bonus" />
+	<definition name="contact" extends="common">
+		<put-attribute name="title" value="contact TITLE" />
+		<put-attribute name="body" value="/WEB-INF/jsp/contact.jsp" />
+		<put-attribute name="current_active" value="contact" />
 	</definition>
 
-	<definition name="users" extends="common"> <!-- users.jsp -->
+	<definition name="users" extends="common"> 
 		<put-attribute name="title" value="users jsp" />
 		<put-attribute name="body" value="/WEB-INF/jsp/users.jsp" />
 		<put-attribute name="current_active" value="users" />
@@ -49,7 +49,7 @@
 	<definition name="user-register" extends="common">
 		<put-attribute name="title" value="users-register jsp" />
 		<put-attribute name="body" value="/WEB-INF/jsp/user-register.jsp" />
-		<put-attribute name="current_active" value="users" />
+		<put-attribute name="current_active" value="register" />
 	</definition>
 
 </tiles-definitions>

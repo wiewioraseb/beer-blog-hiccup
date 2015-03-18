@@ -6,9 +6,6 @@
     <welcome-file>index-main.jsp</welcome-file>
   </welcome-file-list>
   
-   <!-- Caused some problems:
- ClassNotFoundException : org.springframework.web.context.ContextLoaderListener
-  -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>/WEB-INF/applicationContext.xml</param-value>

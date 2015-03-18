@@ -13,16 +13,13 @@ body {
 	<br>
 	<div align='center'>
 		<h2>
-			Hey You..!! This is your 1st Beer drunk for beer blog..<br> <br>
+			You are about to enter Beer Blog
 		</h2>
+		<br><br>
 		<h3>
-			<a href="welcome.html">Click here to See BEER Message... </a><br>(to
-			check BEER Controller... @RequestMapping("/welcome"))
-			<br><br>
-			This is INDEKSOWNIA SITE <a href="indeksownia.html">indeksownia lets seee </a>
-			<br><br>
-			A tutaj czeskie strony: index <a href="index.html">index CZESKI </a>
-		</h3>
+			<a href="welcome.html">Click here to enter the blog</a><br>
+			Or go straight to the registration page - <a href="register.html">Register here</a>
+			</h3>
 	</div>
 </body>
 </html>

@@ -5,14 +5,21 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
+<style type="text/css">
+.table {
+    max-width: 40% !important;
+}
+</style>
 
+<h3>Register your account: <a href='<spring:url value="/register.html" />'>here</a></h3>
+<br>
 
 <table class="table table-bordered table-hover table-condensed">
 	<thead>
 		<tr>
 			<th bgcolor="grey">ID</th>
-			<th bgcolor="grey">user in table</th>
-			<th bgcolor="grey">Link</th>
+			<th bgcolor="grey">User</th>
+			<th bgcolor="grey">Email</th>
 			<th bgcolor="grey">Action</th>
 		</tr>
 <%-- items="${users}" from UserController.java --%>
@@ -27,15 +34,11 @@
 				<td>${user.id}</td>
 				<td>${user.name}</td>
 				<td><spring:url value="/users/${user.id}.html" var="url" /> <a
-					href="${url}">February: ${user.name}</a> <%-- <a href="<spring:url value:"/users/${user.id}.html" />">February: ${user.name} </a></td>--%>
+					href="${url}">February: ${user.name}</a>
 				</td>
 			</tr>
 		
-		</c:forEach>
-		
-		
- https://www.youtube.com/watch?v=6LewRDc6DPc&index=14&list=PLmcxdcWPhFqMq2BctGktOcIJKUw23wJeh
-		
+		</c:forEach>		
 
 	</tbody>
 	
@@ -50,7 +53,7 @@
 
 <br>
 ${url} <br>
-egeszhege
+Lorem Ipsum
 
 <br><br><br>
 
@@ -60,18 +63,4 @@ egeszhege
 
 <br>
 
-<%--
-bambucha
-<table>
-	<tbody>
-		<c:forEach items="${bambucha}" var=itemki>
-		
-		<tr>
-			<td>${itemki.title }</td>
-		</tr>
-		
-		</c:forEach>
-	</tbody>
-</table>
---%>
-lulz
+Lorem Ipsum

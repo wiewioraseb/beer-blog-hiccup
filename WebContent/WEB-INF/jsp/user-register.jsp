@@ -5,21 +5,36 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
+<style type="text/css">
+.table {
+    max-width: 40% !important;
+}
+</style>
 
+<table>
 <!--  path="name" corresponds to User.java in enitity -->
 <form:form commandName="user">
-	<label for="name">Name:	</label>
-	<form:input path="name" />
-		<label for="password">Password:	</label>
-	<form:password path="password" />
+	<tr>
+	<td><label for="name">Name:	</label></td>
+	
+	<td><form:input path="name" /></td>
+	</tr>
+	<tr>
+		<td><label for="password">Password:	</label></td>
+	<td><form:password path="password" /></td>
+	</tr>
+</table>	
 	<input type="submit" value="Save" /> 
+	
 </form:form>
 
+
 <br><br>
-<h1>ADDING SOMEHING HERE</h1>
+<h1>Lorem Ipsum</h1>
 <br>
 
 <!-- Auto updates when form is sent -->
+<center>
 <table class="table table-bordered table-hover table-condensed">
 	<thead>
 		<tr>
@@ -50,7 +65,7 @@
 	</tbody>
 	</c:if>
 </table>
-
+</center>
 	
 	<br>
 	<c:forEach items="${bambucha}" var="itemki">

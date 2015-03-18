@@ -62,17 +62,17 @@ body {
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">Hiccup</a>
+				<a class="navbar-brand" href='<spring:url value="/welcome.html" />'>Hiccup</a>
 			</div>
 
 
 
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li class="${current_active == 'welcome' ? 'active' : '' }"><a href='<spring:url value="/" />'>Home</a></li>
-					<li class="${current_active == 'indeksownia' ? 'active' : '' }"><a href='<spring:url value="/indeksownia.html" />'>About</a></li>
 					<li class="${current_active == 'users' ? 'active' : '' }"><a href='<spring:url value="/users.html" />'>Users</a></li>
-					<li class="${current_active == 'bonus' ? 'active' : '' }"><a href='<spring:url value="/bonus.html" />'>Contact</a></li>
+					<li class="${current_active == 'register' ? 'active' : '' }"><a href='<spring:url value="/register.html" />'>Register</a></li>
+					<li class="${current_active == 'about' ? 'active' : '' }"><a href='<spring:url value="/about.html" />'>About</a></li>
+					<li class="${current_active == 'contact' ? 'active' : '' }"><a href='<spring:url value="/contact.html" />'>Contact</a></li>
 				</ul>
 			</div>
 			<!--/.nav-collapse -->
@@ -83,18 +83,9 @@ body {
 	<br>
 	<br>
 	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
 	
 	<%-- --%>
 	<tiles:insertAttribute name="body" />
-
 	
 	<tiles:insertAttribute name="footer" />
 	

@@ -24,7 +24,7 @@ public class Blog {
 	private User user;
 	
 	@OneToMany(mappedBy = "blog") // Blog can have many items
-	private List<Item> items;
+	private List<Entry> items;
 	
 	public User getUser() {
 		return user;
@@ -34,11 +34,11 @@ public class Blog {
 		this.user = user;
 	}
 
-	public List<Item> getItems() {
+	public List<Entry> getItems() {
 		return items;
 	}
 
-	public void setItems(List<Item> items) {
+	public void setItems(List<Entry> items) {
 		this.items = items;
 	}
 

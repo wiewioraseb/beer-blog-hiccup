@@ -24,11 +24,14 @@ public class UserService {
 	}
 
 	public User findOne(int id) {
-		
 		return userRepository.findOne(id);
 	}
 
 	public void save(User user) {
 		userRepository.save(user);
+	}
+	
+	public void delete(int id){
+		userRepository.delete(id);
 	}
 }

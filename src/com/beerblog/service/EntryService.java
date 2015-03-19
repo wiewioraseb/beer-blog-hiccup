@@ -5,20 +5,20 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.beerblog.entity.Item;
-import com.beerblog.repository.ItemRepository;
+import com.beerblog.entity.Entry;
+import com.beerblog.repository.EntryRepository;
 
 @Service
-public class ItemService {
+public class EntryService {
 
 	@Autowired
-	private ItemRepository itemRepository;
+	private EntryRepository itemRepository;
 	
-	public List<Item> findAll(){
+	public List<Entry> findAll(){
 		return itemRepository.findAll();
 	}
 
-	public Item findOne(int id) {
+	public Entry findOne(int id) {
 		
 		return itemRepository.findOne(id);
 	}

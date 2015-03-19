@@ -10,7 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Item {
+public class Entry {
 
 	@Id
 	@GeneratedValue
@@ -26,7 +26,8 @@ public class Item {
 		this.blog = blog;
 	}
 
-	private String description;
+	@Column(name = "entry_content")
+	private String entryContent;
 	
 	@Column(name = "published_date") // nazwa kolumny
 	private Date publishedDate;
@@ -53,12 +54,12 @@ public class Item {
 		this.title = title;
 	}
 
-	public String getDescription() {
-		return description;
+	public String getEntryContent() {
+		return entryContent;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setEntryContent(String entryContent) {
+		this.entryContent = entryContent;
 	}
 
 	public Date getPublishedDate() {

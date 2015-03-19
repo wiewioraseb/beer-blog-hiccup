@@ -11,11 +11,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.beerblog.entity.Blog;
-import com.beerblog.entity.Item;
+import com.beerblog.entity.Entry;
 import com.beerblog.entity.Role;
 import com.beerblog.entity.User;
 import com.beerblog.repository.BlogRepository;
-import com.beerblog.repository.ItemRepository;
+import com.beerblog.repository.EntryRepository;
 import com.beerblog.repository.RoleRepository;
 import com.beerblog.repository.UserRepository;
 
@@ -33,7 +33,7 @@ public class InitDbService {
 	private UserRepository userRepository;
 	
 	@Autowired
-	private ItemRepository itemRepository;
+	private EntryRepository entryRepository;
 	
 	@PostConstruct // called after the spring context creation. automatically during deployment 
 	public void init(){
@@ -48,6 +48,8 @@ public class InitDbService {
 		
 		User userAdmin = new User();
 		userAdmin.setName("admin");
+		userAdmin.setEmail("admin@mail.com");
+		userAdmin.setRegistrationDate(new Date());
 		List<Role> roles = new ArrayList<Role>();
 		roles.add(roleAdmin);
 		roles.add(roleUser);
@@ -60,6 +62,15 @@ public class InitDbService {
 		beerBlog.setUser(userAdmin);
 		blogRepository.save(beerBlog);
 		
+		Entry entry1 = new Entry();
+		entry1.setBlog(beerBlog);
+		entry1.setTitle("First entry its official now");
+		entry1.setLink("www.link-to-bier.com");
+		entry1.setPublishedDate(new Date());
+		entry1.setEntryContent("First news about beer is here. Don`t drink and <br> drive");
+		entryRepository.save(entry1);
+		
+		/*
 		Item item1 = new Item();
 		item1.setBlog(beerBlog);
 		item1.setTitle("first blog about bier");
@@ -73,7 +84,7 @@ public class InitDbService {
 		item2.setLink("www.link-second-to-bier.com");
 		item2.setPublishedDate(new Date());		
 		itemRepository.save(item2);
-		
+		*/
 		
 	}
 	

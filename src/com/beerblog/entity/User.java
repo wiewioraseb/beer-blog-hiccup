@@ -1,7 +1,9 @@
 package com.beerblog.entity;
 
+import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -19,6 +21,9 @@ public class User {
 	private String name;
 	private String email;
 	private String password;
+	
+	@Column(name = "registration_date")
+	private Date registrationDate;
 	
 	@ManyToMany // users can have many roles
 	@JoinTable
@@ -74,5 +79,13 @@ public class User {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public Date getRegistrationDate() {
+		return registrationDate;
+	}
+
+	public void setRegistrationDate(Date registrationDate) {
+		this.registrationDate = registrationDate;
 	}
 }

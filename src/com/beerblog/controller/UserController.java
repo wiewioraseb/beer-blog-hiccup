@@ -1,6 +1,7 @@
 package com.beerblog.controller;
 
 import java.awt.List;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.beerblog.entity.User;
 import com.beerblog.service.UserService;
-import com.beerblog.service.ItemService;
+import com.beerblog.service.EntryService;
 
 
 
@@ -23,7 +24,7 @@ public class UserController {
 	private UserService userService;
 	
 	@Autowired
-	private ItemService itemService;
+	private EntryService entryService;
 	
 	@ModelAttribute("user") // <form:form commandName="user">
 	public User construct(){
@@ -33,11 +34,9 @@ public class UserController {
 	@RequestMapping("/users.html")
 	public String users(Model model){
 		// loading data from database
-	
-		// testing this
-		model.addAttribute("bambucha", itemService.findAll());
-		
+		model.addAttribute("entries", entryService.findAll());	
 		model.addAttribute("users", userService.findAll());
+		
 		return "users";
 	}
 
@@ -51,25 +50,25 @@ public class UserController {
 	@RequestMapping("/register")
 	public String showRegister(Model model){
 		
-		model.addAttribute("bambucha", itemService.findAll());
+		model.addAttribute("bambucha", entryService.findAll());
 		model.addAttribute("users", userService.findAll());
 		
 		return "user-register";
 	}
 	
-	/* 
-	 	@RequestMapping("/register")
-	public String showRegister(){
-		return "user-register";
-	}
-	 
-	 */
 	
 	@RequestMapping(value="/register", method=RequestMethod.POST)
 	public String doRegister(@ModelAttribute("user") User user){
+		user.setRegistrationDate(new Date());
 		userService.save(user);
-		return "redirect:/register.html"; 
-		//changed from 'user-register' to redirect:/register to achieve proper refreshing
+		return "redirect:/register.html?insert_successful=true"; 
+		// changed from 'user-register' to redirect:/register to achieve proper refreshing
+		// insert_successful shows message after successful registration
 	}
 	
+	@RequestMapping("/delete/{id}")
+	public String deletingUser(@ModelAttribute("user") User user, @PathVariable int id){
+		userService.delete(id);
+		return "redirect:/register.html";
+	}
 }

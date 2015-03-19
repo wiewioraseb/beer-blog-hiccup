@@ -12,20 +12,30 @@
 </style>
 
 <table>
-<!--  path="name" corresponds to User.java in enitity -->
+<!--  path="name" corresponds to enitity in User.java -->
 <form:form commandName="user">
+<thead>
+<tr><td align="center" colspan="2">REGISTER:</td></tr>
+</thead>
 	<tr>
 	<td><label for="name">Name:	</label></td>
 	
 	<td><form:input path="name" /></td>
 	</tr>
+	
+	<tr>
+	<td><label for="email">Email:</label></td>
+	
+	<td><form:input path="email" /></td>
+	</tr>
+	
 	<tr>
 		<td><label for="password">Password:	</label></td>
 	<td><form:password path="password" /></td>
 	</tr>
 </table>	
-	<input type="submit" value="Save" /> 
-	
+	<input type="submit" value="Register" /> 
+	<c:if test="${param.insert_successful eq true }">Registration successful!</c:if>
 </form:form>
 
 
@@ -35,35 +45,44 @@
 
 <!-- Auto updates when form is sent -->
 <center>
+Registered users.<br>
 <table class="table table-bordered table-hover table-condensed">
 	<thead>
 		<tr>
 			<th bgcolor="grey">ID</th>
-			<th bgcolor="grey">user in table</th>
-			<th bgcolor="grey">Link</th>
+			<th bgcolor="grey">User</th>
+			<th bgcolor="grey">Email</th>
+			<th bgcolor="grey">Registration date</th>
 			<th bgcolor="grey">Action</th>
 		</tr>
 <%-- items="${users}" from UserController.java --%>
 	</thead>
 	
 	<c:if test="${!empty users}">
-	
-	<tbody>
-		<c:forEach items="${users}" var="user">
 
-			<tr>
-				<td>${user.id}</td>
-				<td>${user.name}</td>
-				<td><spring:url value="/users/${user.id}.html" var="url" /> <a
-					href="${url}">February: ${user.name}</a> <%-- <a href="<spring:url value:"/users/${user.id}.html" />">February: ${user.name} </a></td>--%>
-				</td>
-			</tr>
-		
-		</c:forEach>
-		
+			<tbody>
+				<c:forEach items="${users}" var="user">
 
-	</tbody>
-	</c:if>
+					<tr>
+						<td>${user.id}</td>
+						<td><spring:url value="/users/${user.id}.html" var="url" />
+							<a href="${url}">${user.name}</a></td>
+						<td>${user.email} <%-- <a href="<spring:url value:"/users/${user.id}.html" />">February: ${user.name} </a></td>--%>
+						</td>
+						<td>${user.registrationDate}</td>
+						
+						<td>
+							<spring:url value="/delete/${user.id}.html" var="url" />
+							<a href="${url}">Delete</a>
+						</td>
+					
+					</tr>
+
+				</c:forEach>
+
+
+			</tbody>
+		</c:if>
 </table>
 </center>
 	

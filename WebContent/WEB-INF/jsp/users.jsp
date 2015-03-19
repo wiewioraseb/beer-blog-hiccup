@@ -44,8 +44,6 @@
 	
 	</c:if>
 	
-
-
 </table><%-- ${user.name} From User.java entity package --%>
 
 <br>
@@ -56,9 +54,10 @@ ${url} <br>
 Lorem Ipsum
 
 <br><br><br>
-
-<c:forEach items="${bambucha}" var="itemki">
-		${itemki.title} <br>
+Ipsum Ipsum <br>
+<c:forEach items="${entries}" var="entry">
+		${entry.entryContent} <br>
+		
 </c:forEach>
 
 <br>

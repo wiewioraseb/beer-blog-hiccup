@@ -10,7 +10,10 @@
 
 <tilesx:useAttribute name="current_active" scope="request"/>
 
-<%-- Background image for every page --%>
+<%-- Background image 
+http://stackoverflow.com/questions/11163517/why-my-css-and-images-can-not-be-read-by-maven
+http://stackoverflow.com/questions/28127843/creating-file-image-folder-directory-for-spring-mvc-and-maven-webapplication
+ --%>
 <style type="text/css">
 body {
 	background-image: url('http://crunchify.com/bg.png');
@@ -88,8 +91,6 @@ body {
 	<tiles:insertAttribute name="body" />
 	
 	<tiles:insertAttribute name="footer" />
-	
-
 	
 
 </body>

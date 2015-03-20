@@ -82,10 +82,8 @@ body {
 		</div>
 	</nav>
 
-	<br>
-	<br>
-	<br>
-	<br>
+
+	<br><br><br>
 	
 	<%-- --%>
 	<tiles:insertAttribute name="body" />

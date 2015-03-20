@@ -9,7 +9,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 
 @Entity
 public class User {
@@ -29,21 +28,11 @@ public class User {
 	@JoinTable
 	private List<Role> roles;
 	
-	@OneToMany(mappedBy = "user") // User user;
-	private List<Blog> blogs; // 
-	
 	
 	public List<Role> getRoles() { 
 		return roles;
 	}
 
-	public List<Blog> getBlogs() {
-		return blogs;
-	}
-
-	public void setBlogs(List<Blog> blogs) {
-		this.blogs = blogs;
-	}
 
 	public void setRoles(List<Role> roles) {
 		this.roles = roles;

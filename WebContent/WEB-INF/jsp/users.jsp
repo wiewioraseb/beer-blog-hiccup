@@ -20,7 +20,6 @@
 			<th bgcolor="grey">ID</th>
 			<th bgcolor="grey">User</th>
 			<th bgcolor="grey">Email</th>
-			<th bgcolor="grey">Action</th>
 		</tr>
 <%-- items="${users}" from UserController.java --%>
 	</thead>
@@ -34,7 +33,7 @@
 				<td>${user.id}</td>
 				<td>${user.name}</td>
 				<td><spring:url value="/users/${user.id}.html" var="url" /> <a
-					href="${url}">February: ${user.name}</a>
+					href="${url}">${user.email}</a>
 				</td>
 			</tr>
 		
@@ -47,19 +46,4 @@
 </table><%-- ${user.name} From User.java entity package --%>
 
 <br>
-
-
-<br>
-${url} <br>
-Lorem Ipsum
-
-<br><br><br>
-Ipsum Ipsum <br>
-<c:forEach items="${entries}" var="entry">
-		${entry.entryContent} <br>
-		
-</c:forEach>
-
-<br>
-
 Lorem Ipsum

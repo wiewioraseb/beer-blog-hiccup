@@ -2,15 +2,49 @@
     pageEncoding="UTF-8"%>
     
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-    
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 
-<body>${message}
+
+<body>
+${message}
 
 	<br>
-	The acutal date and time is: ${serverTime}
-	<br>
 
-		Going back to the beginning - <a href='<spring:url value="/" />'>Blue</a>
+	<c:if test="${!empty entries}">
+		<c:forEach items="${entries}" var="entry">
 	
+	<table border="4" style="width: 50%">
+				<thead>
+					<tr>
+						<td>Entry No. ${entry.id }</td>
+						<td><strong>${entry.title}</strong></td>
+						<td>Published: ${entry.publishedDate}</td>
+					</tr>
+				</thead>
+				<tr>
+					<td colspan="3">${entry.entryContent}</td>
+				</tr>
+			</table>
+			<br>
+		</c:forEach>
+	</c:if>
+
+
+	<form:form commandName="entry">
+
+		<label for="title">Title: </label>
+		<form:input path="title" />
+		<br>
+		<label for="entryContent">Entry content: </label>
+		<form:textarea path="entryContent" rows="4" cols="35" />
+
+		<input type="submit" value="Post entry" />
+
+	</form:form>
+
+
+	<br>Going back to the beginning - <a href='<spring:url value="/" />'>Blue</a>
+
 </body>

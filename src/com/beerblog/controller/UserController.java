@@ -1,6 +1,6 @@
 package com.beerblog.controller;
 
-import java.awt.List;
+
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;

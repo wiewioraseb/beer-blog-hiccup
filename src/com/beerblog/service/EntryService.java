@@ -3,23 +3,32 @@ package com.beerblog.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import com.beerblog.entity.Entry;
+import com.beerblog.entity.BlogEntry;
+import com.beerblog.entity.User;
 import com.beerblog.repository.EntryRepository;
 
 @Service
 public class EntryService {
 
 	@Autowired
-	private EntryRepository itemRepository;
+	private EntryRepository entryRepository;
 	
-	public List<Entry> findAll(){
-		return itemRepository.findAll();
+	public List<BlogEntry> findAll(){
+		return entryRepository.findAll();
 	}
 
-	public Entry findOne(int id) {
-		
-		return itemRepository.findOne(id);
+	public BlogEntry findOne(int id) {
+		return entryRepository.findOne(id);
+	}
+	
+	public void save(BlogEntry entry) {
+		entryRepository.save(entry);
+	}
+	
+	public List<BlogEntry> findAllReversed(){
+		return entryRepository.findAll(new Sort(Sort.Direction.DESC, "Id"));
 	}
 }

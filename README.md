@@ -5,8 +5,6 @@ Simple website for practise purposes. I used Spring, Tomcat, Hibernate and some 
 
 
 Features:
-
-Adding new entries to the site (semi blog).
-
-Registering users (logging not implemented yet).
+- Adding new entries to the site (semi blog).
+- Registering users (logging not implemented yet).
 

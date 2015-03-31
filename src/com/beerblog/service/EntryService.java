@@ -31,4 +31,10 @@ public class EntryService {
 	public List<BlogEntry> findAllReversed(){
 		return entryRepository.findAll(new Sort(Sort.Direction.DESC, "Id"));
 	}
+	
+	// Tags
+	/*public List<BlogEntry> findAllByTags(String tag){
+		return entryRepository.findAll();
+	}
+	*/
 }

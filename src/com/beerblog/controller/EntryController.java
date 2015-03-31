@@ -16,12 +16,16 @@ import org.springframework.web.servlet.ModelAndView;
 import com.beerblog.entity.BlogEntry;
 import com.beerblog.entity.User;
 import com.beerblog.service.EntryService;
+import com.beerblog.service.TagService;
 
 @Controller
 public class EntryController {
 
 	@Autowired
 	private EntryService entryService;
+	
+	@Autowired
+	private TagService tagService;
 	
 	@ModelAttribute("entry") // <form:form commandName="entry">
 	public BlogEntry construct(){
@@ -39,13 +43,16 @@ public class EntryController {
 		// testing for reverse - newest on top
 		//model.addAttribute("entries", entryService.findAll());
 		model.addAttribute("entries", entryService.findAllReversed());
+	
+		//test tags
+		model.addAttribute("tags", tagService.findAll());
 		
 		return new ModelAndView("welcome", "message", message);
 	}
 	
 	
 	@RequestMapping(value="/welcome", method=RequestMethod.POST)
-	public String doRegister(@ModelAttribute("entry") BlogEntry entry){
+	public String doSubmitEntry(@ModelAttribute("entry") BlogEntry entry){
 		entry.setPublishedDate(new Date());
 		entryService.save(entry);
 		//Collections.reverse((List<?>) entry);

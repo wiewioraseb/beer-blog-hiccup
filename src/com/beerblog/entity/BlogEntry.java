@@ -1,11 +1,14 @@
 package com.beerblog.entity;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 
 @Entity
@@ -24,7 +27,10 @@ public class BlogEntry {
 	@Column(name = "published_date") // nazwa kolumny
 	private Date publishedDate;
 	
-	private String link;
+	
+	@ManyToMany
+	@JoinTable
+	private List<TagBlog> tags;
 	
 	
 	public Integer getId() {
@@ -59,12 +65,12 @@ public class BlogEntry {
 		this.publishedDate = publishedDate;
 	}
 
-	public String getLink() {
-		return link;
+	public List<TagBlog> getTags() {
+		return tags;
 	}
 
-	public void setLink(String link) {
-		this.link = link;
+	public void setTags(List<TagBlog> tags) {
+		this.tags = tags;
 	}
 
 	

@@ -20,15 +20,19 @@ ${message}
 					<tr>
 						<td>Entry No. ${entry.id }</td>
 						<td><strong>${entry.title}</strong></td>
+						<td>Tags: <c:forEach items="${tags}" var="tag">
+								#${tag.tag}, 
+									</c:forEach></td>
 						<td>Published: ${entry.publishedDate}</td>
 					</tr>
 				</thead>
 				<tr>
-					<td colspan="3">${entry.entryContent}</td>
+					<td colspan="4">${entry.entryContent}</td>
 				</tr>
 			</table>
 			<br>
 		</c:forEach>
+		
 	</c:if>
 
 
@@ -46,5 +50,20 @@ ${message}
 
 
 	<br>Going back to the beginning - <a href='<spring:url value="/" />'>Blue</a>
+
+
+PROBA WCZYTANIA TAGOW: <br>
+
+		<c:forEach items="${tags}" var="tag">
+	
+		<table>
+				<tr>
+					<td>${tag.tag}</td>
+					<td>${tag.id}</td>
+				</tr>
+			</table>
+			<br>
+		</c:forEach>
+
 
 </body>

@@ -8,4 +8,6 @@ import com.beerblog.entity.BlogEntry;
 
 public interface EntryRepository extends JpaRepository<BlogEntry, Integer> {
 
+	
+	
 }

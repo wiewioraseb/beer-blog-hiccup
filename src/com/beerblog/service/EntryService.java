@@ -32,9 +32,9 @@ public class EntryService {
 		return entryRepository.findAll(new Sort(Sort.Direction.DESC, "Id"));
 	}
 	
-	// Tags
-	/*public List<BlogEntry> findAllByTags(String tag){
-		return entryRepository.findAll();
+	public void delete(int id){
+		entryRepository.delete(id);
 	}
-	*/
+
+	
 }

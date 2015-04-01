@@ -20,10 +20,12 @@ ${message}
 					<tr>
 						<td>Entry No. ${entry.id }</td>
 						<td><strong>${entry.title}</strong></td>
-						<td>Tags: <c:forEach items="${tags}" var="tag">
-								#${tag.tag}, 
-									</c:forEach></td>
 						<td>Published: ${entry.publishedDate}</td>
+						<td>
+							<spring:url value="/delete_entry/${entry.id}.html" var="url" />
+							<a href="${url}">Delete</a>
+						</td>
+						
 					</tr>
 				</thead>
 				<tr>
@@ -44,7 +46,8 @@ ${message}
 		<label for="entryContent">Entry content: </label>
 		<form:textarea path="entryContent" rows="4" cols="35" />
 
-		<input type="submit" value="Post entry" />
+		<input type="submit" value="Post entry" /> 
+		<c:if test="${param.entry_successful eq true }">Published!</c:if>
 
 	</form:form>
 
@@ -52,18 +55,6 @@ ${message}
 	<br>Going back to the beginning - <a href='<spring:url value="/" />'>Blue</a>
 
 
-PROBA WCZYTANIA TAGOW: <br>
-
-		<c:forEach items="${tags}" var="tag">
-	
-		<table>
-				<tr>
-					<td>${tag.tag}</td>
-					<td>${tag.id}</td>
-				</tr>
-			</table>
-			<br>
-		</c:forEach>
 
 
 </body>

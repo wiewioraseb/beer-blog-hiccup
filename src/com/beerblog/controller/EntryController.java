@@ -9,14 +9,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.beerblog.entity.BlogEntry;
-import com.beerblog.entity.User;
 import com.beerblog.service.EntryService;
-import com.beerblog.service.TagService;
 
 @Controller
 public class EntryController {
@@ -24,8 +23,6 @@ public class EntryController {
 	@Autowired
 	private EntryService entryService;
 	
-	@Autowired
-	private TagService tagService;
 	
 	@ModelAttribute("entry") // <form:form commandName="entry">
 	public BlogEntry construct(){
@@ -44,8 +41,6 @@ public class EntryController {
 		//model.addAttribute("entries", entryService.findAll());
 		model.addAttribute("entries", entryService.findAllReversed());
 	
-		//test tags
-		model.addAttribute("tags", tagService.findAll());
 		
 		return new ModelAndView("welcome", "message", message);
 	}
@@ -56,7 +51,15 @@ public class EntryController {
 		entry.setPublishedDate(new Date());
 		entryService.save(entry);
 		//Collections.reverse((List<?>) entry);
-		return "redirect:/welcome.html"; 
+		return "redirect:/welcome.html?entry_successful=true";
 	}
+	
+	
+	@RequestMapping("/delete_entry/{id}")
+	public String deletingEntry(@ModelAttribute("entry") BlogEntry entry, @PathVariable int id){
+		entryService.delete(id);
+		return "redirect:/welcome.html";
+	}
+
 	
 }

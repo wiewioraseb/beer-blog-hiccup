@@ -34,13 +34,10 @@ public class EntryController {
 	public ModelAndView welcomePage(Model model) {
 
 		String message = "<div align='center'>"
-				+ "<h3>********** Beer Blog **********</h3>"
-				+ "This message is comming from BlogMapping.java";
+				+ "<h3>********** Beer Blog **********</h3>";
 		
-		// testing for reverse - newest on top
-		//model.addAttribute("entries", entryService.findAll());
-		model.addAttribute("entries", entryService.findAllReversed());
-	
+		model.addAttribute("entries_desc", entryService.findAllReversed());
+		model.addAttribute("entries_asc", entryService.findAll());
 		
 		return new ModelAndView("welcome", "message", message);
 	}

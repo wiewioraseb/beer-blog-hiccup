@@ -40,7 +40,7 @@ p {
 
     <footer class="footer">
       <div class="container">
-        <p class="text-muted">&copy; Astro the Herdsman.</p>
+        <p class="text-muted">&copy; Author the author.</p>
       </div>
     </footer>
 

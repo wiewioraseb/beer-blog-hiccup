@@ -4,7 +4,7 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
 
 
 <body>
@@ -18,6 +18,7 @@ or
 <spring:url value="/welcome.html?sort_bydate=true" var="url" />
 <a href="${url}">ascending</a> order
 <br><br>
+Login as admin (login:admin, password:admin) to be able to delete entries.
 
 	<!-- <c:if test="${!empty entries_desc}"> -->
 
@@ -31,9 +32,11 @@ or
 							<td>Entry No. ${entry.id }</td>
 							<td><strong>${entry.title}</strong></td>
 							<td>Published: ${entry.publishedDate}</td>
-							<td><spring:url value="/delete_entry/${entry.id}.html"
-									var="url" /> <a href="${url}">Delete</a></td>
-						</tr>
+							<td><security:authorize access="hasRole('ROLE_ADMIN')">
+								<spring:url value="/delete_entry/${entry.id}.html" var="url" />
+								<a href="${url}">Delete</a>
+							</security:authorize></td>
+						</tr>	
 					</thead>
 					<tr>
 						<td colspan="4">${entry.entryContent}</td>
@@ -54,8 +57,10 @@ or
 							<td>Entry No. ${entry.id }</td>
 							<td><strong>${entry.title}</strong></td>
 							<td>Published: ${entry.publishedDate}</td>
-							<td><spring:url value="/delete_entry/${entry.id}.html"
-									var="url" /> <a href="${url}">Delete</a></td>
+							<td><security:authorize access="hasRole('ROLE_ADMIN')">
+								<spring:url value="/delete_entry/${entry.id}.html" var="url" />
+								<a href="${url}">Delete</a>
+							</security:authorize></td>
 						</tr>
 					</thead>
 					<tr>
@@ -67,6 +72,7 @@ or
 
 		</c:if>
 	<!-- </c:if> -->
+
 
 
 	<form:form commandName="entry">
@@ -81,12 +87,6 @@ or
 		<c:if test="${param.entry_successful eq true }">Published!</c:if>
 
 	</form:form>
-
-
-	<br>Going back to the beginning - <a href='<spring:url value="/" />'>Blue</a>
-
-<br> Sort by date ASCEnding: <spring:url value="/welcome.html?sort_bydate=true" var="url" />
-							<a href="${url}">Sort in ascending order</a>
 
 
 </body>

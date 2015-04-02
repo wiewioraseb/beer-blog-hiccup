@@ -50,4 +50,6 @@
 	<jpa:repositories base-package="com.beerblog.repository"
 		entity-manager-factory-ref="emf" transaction-manager-ref="transactionManager"></jpa:repositories>
 
+<import resource="security.xml"/>
+
 </beans>

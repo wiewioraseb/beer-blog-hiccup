@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 
 import com.beerblog.entity.BlogEntry;
 import com.beerblog.entity.Role;
-import com.beerblog.entity.TagBlog;
 import com.beerblog.entity.User;
 import com.beerblog.repository.EntryRepository;
 import com.beerblog.repository.RoleRepository;
@@ -45,6 +44,7 @@ public class InitDbService {
 		User userAdmin = new User();
 		userAdmin.setName("admin");
 		userAdmin.setEmail("admin@mail.com");
+		userAdmin.setPassword("admin"); // to simplify
 		userAdmin.setRegistrationDate(new Date());
 		List<Role> roles = new ArrayList<Role>();
 		roles.add(roleAdmin);
@@ -52,20 +52,26 @@ public class InitDbService {
 		userAdmin.setRoles(roles);
 		userRepository.save(userAdmin);
 		
+		User userUser = new User();
+		userUser.setName("user");
+		userUser.setEmail("user@mail.com");
+		userUser.setPassword("user");
+		userUser.setRegistrationDate(new Date());
+		List<Role> userRoles = new ArrayList<Role>();
+		userRoles.add(roleUser);
+		userUser.setRoles(userRoles);
+		userRepository.save(userUser);
+		
 		BlogEntry entry1 = new BlogEntry();
 		entry1.setTitle("First entry title");
 		entry1.setPublishedDate(new Date());
-		entry1.setEntryContent("First news about beer. Don`t drink and drive");
-		List<TagBlog> tags = new ArrayList<TagBlog>();
-		entry1.setTags(tags);
+		entry1.setEntryContent("First news about beer. Don't drink and drive.");
 		entryRepository.save(entry1);
 		
 		BlogEntry entry2 = new BlogEntry();
 		entry2.setTitle("Two title");
 		entry2.setPublishedDate(new Date());
-		entry2.setEntryContent("Two 2 entry content ");
-		List<TagBlog> tags2 = new ArrayList<TagBlog>();
-		entry2.setTags(tags2);
+		entry2.setEntryContent("Second entry content. ");
 		entryRepository.save(entry2);
 		
 	}

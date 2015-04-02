@@ -5,7 +5,6 @@
 		<class>com.beerblog.entity.User</class>
 		<class>com.beerblog.entity.Role</class>
 		<class>com.beerblog.entity.BlogEntry</class>
-		<class>com.beerblog.entity.TagBlog</class>
 	</persistence-unit>
 
 

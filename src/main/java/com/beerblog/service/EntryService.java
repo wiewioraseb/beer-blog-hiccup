@@ -7,7 +7,6 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.beerblog.entity.BlogEntry;
-import com.beerblog.entity.User;
 import com.beerblog.repository.EntryRepository;
 
 @Service

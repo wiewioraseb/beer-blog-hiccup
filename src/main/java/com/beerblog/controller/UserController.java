@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.beerblog.entity.User;
-import com.beerblog.service.UserService;
 import com.beerblog.service.EntryService;
+import com.beerblog.service.UserService;
 
 
 

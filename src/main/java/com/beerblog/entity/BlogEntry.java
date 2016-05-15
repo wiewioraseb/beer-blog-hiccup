@@ -24,9 +24,13 @@ public class BlogEntry {
 	@Column(name = "entry_content")
 	private String entryContent;
 	
-	@Column(name = "published_date")
+	@Column(name = "published_date") // nazwa kolumny
 	private Date publishedDate;
 	
+	
+	@ManyToMany
+	@JoinTable
+	private List<TagBlog> tags;
 	
 	
 	public Integer getId() {
@@ -59,6 +63,14 @@ public class BlogEntry {
 
 	public void setPublishedDate(Date publishedDate) {
 		this.publishedDate = publishedDate;
+	}
+
+	public List<TagBlog> getTags() {
+		return tags;
+	}
+
+	public void setTags(List<TagBlog> tags) {
+		this.tags = tags;
 	}
 
 	

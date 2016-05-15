@@ -16,10 +16,10 @@
 		<put-attribute name="current_active" value="index" />
 	</definition>
 
-	<definition name="log-in" extends="common"> 
+	<definition name="about" extends="common"> 
 		<put-attribute name="title" value="about TITLE" />
-		<put-attribute name="body" value="/WEB-INF/jsp/log-in.jsp" />
-		<put-attribute name="current_active" value="log-in" />
+		<put-attribute name="body" value="/WEB-INF/jsp/about.jsp" />
+		<put-attribute name="current_active" value="about" />
 	</definition>
 
 	<definition name="welcome" extends="common">

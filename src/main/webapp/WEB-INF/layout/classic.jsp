@@ -2,11 +2,11 @@
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <!DOCTYPE html>
+<html>
 <head>
 
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles-extras" prefix="tilesx"%>
-<%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
 
 <tilesx:useAttribute name="current_active" scope="request"/>
 
@@ -69,24 +69,13 @@ body {
 			</div>
 
 
-			<!--  for security -->
-			<!-- http://docs.spring.io/spring-security/site/docs/4.0.0.RELEASE/reference/htmlsingle/#el-common-built-in -->
 
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li class="${current_active == 'users' ? 'active' : '' }"><a
-						href='<spring:url value="/users.html" />'>Users</a></li>
-					<li class="${current_active == 'register' ? 'active' : '' }"><a
-						href='<spring:url value="/register.html" />'>Register</a></li>
-					<security:authorize access="! isAuthenticated()">
-						<li class="${current_active == 'log-in' ? 'active' : '' }"><a
-							href='<spring:url value="/log-in.html" />'>Login</a></li>
-					</security:authorize>
-					<security:authorize access="isAuthenticated()">
-						<li><a href='<spring:url value="/logout" />'>Logout</a></li>
-					</security:authorize>
-					<li class="${current_active == 'contact' ? 'active' : '' }"><a
-						href='<spring:url value="/contact.html" />'>Contact</a></li>
+					<li class="${current_active == 'users' ? 'active' : '' }"><a href='<spring:url value="/users.html" />'>Users</a></li>
+					<li class="${current_active == 'register' ? 'active' : '' }"><a href='<spring:url value="/register.html" />'>Register</a></li>
+					<li class="${current_active == 'about' ? 'active' : '' }"><a href='<spring:url value="/about.html" />'>About</a></li>
+					<li class="${current_active == 'contact' ? 'active' : '' }"><a href='<spring:url value="/contact.html" />'>Contact</a></li>
 				</ul>
 			</div>
 			<!--/.nav-collapse -->
@@ -103,3 +92,4 @@ body {
 	
 
 </body>
+</html>

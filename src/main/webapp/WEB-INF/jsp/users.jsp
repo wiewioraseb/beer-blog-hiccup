@@ -29,14 +29,15 @@
 	<tbody>
 		<c:forEach items="${users}" var="user">
 
-				<tr>
-					<td>${user.id}</td>
-					<td><spring:url value="/users/${user.id}.html" var="url" /> <a
-						href="${url}">${user.name}</a></td>
-					<td>${user.email}</td>
-				</tr>
-
-			</c:forEach>		
+			<tr>
+				<td>${user.id}</td>
+				<td>${user.name}</td>
+				<td><spring:url value="/users/${user.id}.html" var="url" /> <a
+					href="${url}">${user.email}</a>
+				</td>
+			</tr>
+		
+		</c:forEach>		
 
 	</tbody>
 	

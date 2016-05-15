@@ -4,7 +4,6 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
 
 <style type="text/css">
 .table {
@@ -46,8 +45,7 @@
 
 <!-- Auto updates when form is sent -->
 <center>
-Already registered users.<br>
-(To delete users login as admin)
+Registered users.<br>
 <table class="table table-bordered table-hover table-condensed">
 	<thead>
 		<tr>
@@ -64,6 +62,7 @@ Already registered users.<br>
 
 			<tbody>
 				<c:forEach items="${users}" var="user">
+
 					<tr>
 						<td>${user.id}</td>
 						<td><spring:url value="/users/${user.id}.html" var="url" />
@@ -71,18 +70,23 @@ Already registered users.<br>
 						<td>${user.email} <%-- <a href="<spring:url value:"/users/${user.id}.html" />">February: ${user.name} </a></td>--%>
 						</td>
 						<td>${user.registrationDate}</td>
+						
 						<td>
-							<security:authorize access="hasRole('ROLE_ADMIN')">
 							<spring:url value="/delete/${user.id}.html" var="url" />
 							<a href="${url}">Delete</a>
-							</security:authorize>
 						</td>
 					
 					</tr>
+
 				</c:forEach>
+
 
 			</tbody>
 		</c:if>
 </table>
 </center>
 	
+	<br>
+	<c:forEach items="${bambucha}" var="itemki">
+		${itemki.title} <br>
+</c:forEach>

@@ -12,15 +12,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class BlogMapping {
 	
-	
-	@RequestMapping("/log-in.html")
+	// This shows about.html in web browser (from about.jsp)
+	@RequestMapping("/about.html")
 	public String about(Model model){
 		
 		DateFormat dFormat = DateFormat.getDateTimeInstance();
-		String dateAndTime = dFormat.format(new Date()); 		
+		String dateAndTime = dFormat.format(new Date()); //new DateFormat().getDateTimeInstance(DateFormat.LONG, DateFormat)		
 		model.addAttribute("serverTime", dateAndTime);
 		
-		return "log-in"; 
+		return "about"; // /WEB-INF/jsp/about
 	}
 	
 	

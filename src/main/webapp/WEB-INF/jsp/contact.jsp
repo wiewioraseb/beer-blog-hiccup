@@ -6,4 +6,4 @@
 <br>
 <h1> Contact</h1>
 <br>
-<center>Email: Lorem Ipsum</center>
+<center>Email:</center>
